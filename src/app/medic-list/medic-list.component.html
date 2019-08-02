@@ -1,0 +1,8 @@
+<h1>List Medics</h1>
+<div *ngFor="let medic of medics; index as medicId">
+  <h3>
+    <a [title]="medic.name + ' details'" [routerLink]="['/medic', medicId]">
+      {{ medic.name }}
+    </a>
+  </h3>
+</div>

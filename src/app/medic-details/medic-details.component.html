@@ -1,0 +1,8 @@
+<h2>Medic Details</h2>
+
+<div *ngIf="medic">
+  <h3>{{ medic.name }}</h3>
+  <h4>{{ medic.price | currency }}</h4>
+  <p>{{ medic.description }}</p>
+
+</div>
