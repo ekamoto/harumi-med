@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { medics } from '../medics';
+import { MedicService } from '../medic.service';
 
 @Component({
   selector: 'app-medic-list',
@@ -8,9 +8,11 @@ import { medics } from '../medics';
 })
 export class MedicListComponent implements OnInit {
 
-  medics = medics;
+  public medics = [];
 
-  constructor() { }
+  constructor(private medicService: MedicService) { 
+    this.medics = medicService.getMedics();
+  }
 
   ngOnInit() {
 

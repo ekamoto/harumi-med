@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { medics } from '../medics';
 import { ActivatedRoute } from '@angular/router';
+import { MedicService } from '../medic.service';
 
 @Component({
   selector: 'app-medic-details',
@@ -10,15 +10,18 @@ import { ActivatedRoute } from '@angular/router';
 
 export class MedicDetailsComponent implements OnInit {
 
-  medic;
+  private medics;
+  public medic;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private medicService: MedicService) {
+    this.medics = medicService.getMedics();
+   }
 
   ngOnInit() {
 
     this.route.paramMap.subscribe(params => {
 
-      this.medic = medics[+params.get('medicId')];
+      this.medic = this.medics[+params.get('medicId')];
     });
   }
 
