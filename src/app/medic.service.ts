@@ -5,30 +5,26 @@ import { Injectable } from '@angular/core';
 })
 export class MedicService {
 
-  private medics = [];
+  public medics = [
+    {
+      medicId: 1,
+      name: 'Dr. Help'
+    },
+    {
+        medicId: 2,
+        name: 'Dr. Rivotril'
+    },
+    {
+        medicId: 3,
+        name: 'Dr. Arrogante'
+    }
+  ];
 
   constructor() { 
-
-    this.medics = [
-      {
-          medicId: 1,
-          name: 'Dr. Help'
-      },
-      {
-          medicId: 2,
-          name: 'Dr. Rivotril'
-      },
-      {
-          medicId: 3,
-          name: 'Dr. Arrogante'
-      },
-      {
-          medicId: 4,
-          name: 'Dr. Faz o que você quiser'
-      }    ];
   }
 
   addMedic(medic) {
+    alert(medic.name + " add success!");
     this.medics.push(medic);
   }
 

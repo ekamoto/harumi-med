@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MedicService } from '../medic.service';
 
+
 @Component({
   selector: 'app-medic-list',
   templateUrl: './medic-list.component.html',
